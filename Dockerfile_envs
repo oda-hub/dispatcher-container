@@ -1,0 +1,10 @@
+FROM base_docker_image
+
+ARG ENV_NAME
+ARG CDCI_BRANCH
+
+
+
+#INSTALL LOCAL PACKAGES
+RUN cd  $DISPATCHER_HOME/online_analysis/$ENV_NAME/software/cdci_data_analysis; conda install --yes --file requirements.txt; python setup.py install
+RUN cd  $DISPATCHER_HOME/online_analysis/$ENV_NAME/software/ddosaclient; python setup.py install
