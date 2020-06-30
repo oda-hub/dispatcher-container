@@ -1,0 +1,15 @@
+instruments:
+  isgri:
+      dispatcher_mnt_point: /data
+      data_server_cache: reduced/ddcache
+      dummy_cache: /data/dummy_prods
+      data_server_url: interface-worker
+      data_server_port: 5691
+
+  jemx:
+      dispatcher_mnt_point: /data
+      data_server_cache: reduced/ddcache
+      dummy_cache: /data/dummy_prods
+      data_server_url: 
+      data_server_url: interface-worker
+      data_server_port: 5691
