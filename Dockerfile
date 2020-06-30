@@ -4,7 +4,7 @@ RUN pip install pip --upgrade
 
 ADD ./dispatcher/ddosaclient /dispatcher/ddosaclient
 RUN cd /dispatcher/ddosaclient && \
-    conda install --yes --file requirements.txt  && \
+    pip install -r requirements.txt  && \
     python setup.py install
 
 ADD requirements.txt /requirements.txt
@@ -15,9 +15,9 @@ ENV CDCI_OSA_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml
 ENV CDCI_POLAR_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/polar_data_server_conf.yml
 
 
-ARG uid
-RUN useradd integral -u $uid
-USER integral
+#ARG uid
+#RUN useradd integral -u $uid
+#USER integral
 
 WORKDIR /data/dispatcher_scratch
 

@@ -1,4 +1,6 @@
-image_tag=admin.reproducible.online/dispatcher:$(version)
+version ?= $(shell git describe --always)
+
+image_tag=odahub/dispatcher:$(version)
 
 run: build
 	docker run $(image_tag) 
