@@ -2,11 +2,6 @@ FROM python:3.7
 
 RUN pip install pip --upgrade
 
-ADD ./dispatcher/ddosaclient /dispatcher/ddosaclient
-RUN cd /dispatcher/ddosaclient && \
-    pip install -r requirements.txt  && \
-    python setup.py install
-
 ADD requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
