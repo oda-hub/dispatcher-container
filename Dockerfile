@@ -1,9 +1,14 @@
-FROM python:3.7
+FROM python:3.6
 
 RUN pip install pip --upgrade
 
 ADD requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
+
+ADD cdci_data_analysis /cdci_data_analysis
+
+RUN pip install -r /cdci_data_analysis/requirements.txt
+RUN pip install /cdci_data_analysis
 
 
 ENV CDCI_OSA_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml
