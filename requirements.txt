@@ -19,4 +19,4 @@ flask-restplus
 oda_api
 six
 werkzeug<=0.16.1
-pscolors
+python-shell-colors==0.1.8
