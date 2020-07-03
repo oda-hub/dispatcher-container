@@ -14,6 +14,10 @@ ADD cdci_osa_plugin /cdci_osa_plugin
 RUN pip install -r /cdci_osa_plugin/requirements.txt && \
     pip install  /cdci_osa_plugin
 
+ADD cdci_api_plugin /cdci_api_plugin
+RUN pip install -r /cdci_api_plugin/requirements.txt && \
+    pip install  /cdci_api_plugin
+
 RUN mkdir -pv /dispatcher/conf/conf.d/
 ADD conf/conf.d/osa_data_server_conf.yml /dispatcher/conf/conf.d/osa_data_server_conf.yml
 
