@@ -1,6 +1,6 @@
 werkzeug<=0.16.1
 gunicorn
-ddaclient==1.1.3
+ddaclient==1.1.6
 future
 numpy
 pyyaml
