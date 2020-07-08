@@ -16,7 +16,7 @@ RUN pip install -r /cdci_osa_plugin/requirements.txt && \
 
 ADD cdci_spiacs_plugin /cdci_spiacs_plugin
 RUN pip install -r /cdci_spiacs_plugin/requirements.txt && \
-    pip install  /cdci_spics_plugin
+    pip install  /cdci_spiacs_plugin
 
 ADD cdci_api_plugin /cdci_api_plugin
 RUN pip install -r /cdci_api_plugin/requirements.txt && \
@@ -27,11 +27,10 @@ RUN pip install -r /cdci_magic_plugin/requirements.txt && \
     pip install  /cdci_magic_plugin
 
 
-RUN mkdir -pv /dispatcher/conf/conf.d/
-ADD conf/conf.d/osa_data_server_conf.yml /dispatcher/conf/conf.d/osa_data_server_conf.yml
-
+# these will be mounted at runtime
 ENV CDCI_OSA_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml
 ENV CDCI_POLAR_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/polar_data_server_conf.yml
+ENV CDCI_MAGIC_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/magic_data_server_conf.yml
 
 WORKDIR /data/dispatcher_scratch
 

@@ -3,13 +3,11 @@ docker-build-master:
   image: docker:stable
   stage: build
   before_script:
-    - apk add git openssh make
-    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab.astro.unige.ch/cdci/dispatcher/cdci_docker_dispatcher
-    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" odahub/dispatcher
+    - apk add git openssh make bash
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
     - docker info
   script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE" .
-    - docker push "$CI_REGISTRY_IMAGE"
     - make push
   only:
-    - staging-1-3
+    - staging-1.3
+    - ci
