@@ -22,7 +22,7 @@ ADD cdci_api_plugin /cdci_api_plugin
 RUN pip install -r /cdci_api_plugin/requirements.txt && \
     pip install  /cdci_api_plugin
 
-ADD cdci_osa_plugin /cdci_magic_plugin
+ADD cdci_magic_plugin /cdci_magic_plugin
 RUN pip install -r /cdci_magic_plugin/requirements.txt && \
     pip install  /cdci_magic_plugin
 
