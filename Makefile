@@ -15,6 +15,8 @@ run: build
 		$(image) 
 
 build:
+	bash make.sh 
+	git submodule update --init
 	docker build  -t $(image)  \
 		.
 
