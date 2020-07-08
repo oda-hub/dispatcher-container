@@ -12,8 +12,9 @@ docker-build:
     - ci
 
 
-trigger_build:
+trigger_deployment:
   stage: .post
   trigger: cdci/dispatcher/dispatcher-chart
   only:
     - staging-1.3
+    - ci
