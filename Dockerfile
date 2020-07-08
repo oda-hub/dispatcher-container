@@ -10,17 +10,22 @@ ADD cdci_data_analysis /cdci_data_analysis
 RUN pip install -r /cdci_data_analysis/requirements.txt && \
     pip install /cdci_data_analysis
 
-ADD cdci_osa_plugin /cdci_magic_plugin
-RUN pip install -r /cdci_magic_plugin/requirements.txt && \
-    pip install  /cdci_magic_plugin
-
 ADD cdci_osa_plugin /cdci_osa_plugin
 RUN pip install -r /cdci_osa_plugin/requirements.txt && \
     pip install  /cdci_osa_plugin
 
+ADD cdci_spiacs_plugin /cdci_spiacs_plugin
+RUN pip install -r /cdci_spiacs_plugin/requirements.txt && \
+    pip install  /cdci_spics_plugin
+
 ADD cdci_api_plugin /cdci_api_plugin
 RUN pip install -r /cdci_api_plugin/requirements.txt && \
     pip install  /cdci_api_plugin
+
+ADD cdci_osa_plugin /cdci_magic_plugin
+RUN pip install -r /cdci_magic_plugin/requirements.txt && \
+    pip install  /cdci_magic_plugin
+
 
 RUN mkdir -pv /dispatcher/conf/conf.d/
 ADD conf/conf.d/osa_data_server_conf.yml /dispatcher/conf/conf.d/osa_data_server_conf.yml

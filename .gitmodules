@@ -1,0 +1,15 @@
+[submodule "cdci_api_plugin"]
+	path = cdci_api_plugin
+	url = git@gitlab.astro.unige.ch:cdci/cdci_api_plugin.git
+[submodule "cdci_magic_plugin"]
+	path = cdci_magic_plugin
+	url = git@gitlab.astro.unige.ch:cdci/magic/cdci_magic_plugin.git
+[submodule "cdci_osa_plugin"]
+	path = cdci_osa_plugin
+	url = git@gitlab.astro.unige.ch:cdci/integral/cdci_osa_plugin.git
+[submodule "cdci_spiacs_plugin"]
+	path = cdci_spiacs_plugin
+	url = git@gitlab.astro.unige.ch:cdci/integral/cdci_spiacs_plugin.git
+[submodule "cdci_data_analysis"]
+	path = cdci_data_analysis
+	url = git@gitlab.astro.unige.ch:savchenk/cdci_data_analysis.git
