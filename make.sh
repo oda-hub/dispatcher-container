@@ -16,6 +16,9 @@ for c in cdci_*; do
         git remote set-url origin $(git remote get-url origin | sed 's/git@/https:\/\//; s/.ch:/.ch\//')
         git pull origin staging-1.3
     )
+    git add $c
 done
+
+git commit -a -m "updated submodules"
 
 sed 's/git@/https:\/\//; s/.ch:/.ch\//' -i .gitmodules
