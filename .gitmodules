@@ -12,4 +12,4 @@
 	url = https://gitlab.astro.unige.ch/cdci/integral/cdci_spiacs_plugin.git
 [submodule "cdci_data_analysis"]
 	path = cdci_data_analysis
-	url = https://gitlab.astro.unige.ch/savchenk/cdci_data_analysis.git
+	url = https://gitlab.astro.unige.ch/cdci/cdci_data_analysis.git
