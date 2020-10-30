@@ -3,7 +3,7 @@ test:
   stage: test
   before_script:
     - pip install pytest
-    - for d in $PWD/cdci_*; do ( pip install $d; ); done
+    - for d in $PWD/cdci_*; do ( pip install $d || echo "$d is not installable"; ); done
   script:
     - for d in cdci_*; do ( cd $d; python -m pytest tests; ); done
   only:
