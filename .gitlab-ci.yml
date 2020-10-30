@@ -5,6 +5,7 @@ test:
     - pip install pytest
     - for d in $PWD/cdci_*; do ( pip install $d || echo "$d is not installable"; ); done
   script:
+    - git submodule update --init
     - for d in cdci_osa*; do ( cd $d; [ -d $d/tests ] && python -m pytest tests; ) || echo "it's ok"; done
   only:
     - staging-1.3

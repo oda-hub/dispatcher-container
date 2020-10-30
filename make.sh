@@ -19,8 +19,8 @@ for c in cdci_*; do
     git add $c
 done
 
-git config --global user.email "oda-bot@odahub.io"
-git config --global user.name "ODA CI Bot"
+git config user.email "oda-bot@odahub.io"
+git config user.name "ODA CI Bot"
 git commit -a -m "updated submodules"
 
 sed 's/git@/https:\/\//; s/.ch:/.ch\//' -i .gitmodules
