@@ -1,6 +1,7 @@
 version ?= $(shell git describe --always)
 
 image=odahub/dispatcher:$(version)
+image_latest=odahub/dispatcher:latest
 
 run: build
 	docker run \
@@ -22,4 +23,6 @@ build:
 
 
 push: build
+	docker tag $(image) $(image_latest)
+	docker push $(image_latest)
 	docker push $(image)
