@@ -1,3 +1,15 @@
+test:
+    image: python:3.8
+  stage: test
+  before_script:
+    - pip install pytest
+    - for d in cdci_*; do ( pip install $d; ); done
+  script:
+    - for d in cdci_*; do ( cd $d; python -m pytest tests; ); done
+  only:
+    - staging-1.3
+    - ci
+
 docker-build:
   image: docker:stable
   stage: build
