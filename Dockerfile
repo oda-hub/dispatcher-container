@@ -26,6 +26,10 @@ ADD cdci_magic_plugin /cdci_magic_plugin
 RUN pip install -r /cdci_magic_plugin/requirements.txt && \
     pip install  /cdci_magic_plugin
 
+ADD ddaclient /ddaclient
+RUN pip install -r /ddaclient/requirements.txt && \
+    pip install  /ddaclient
+
 
 # these will be mounted at runtime
 ENV CDCI_OSA_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml
