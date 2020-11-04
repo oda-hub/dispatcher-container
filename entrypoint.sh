@@ -1,4 +1,7 @@
-export PYTHONUNBUFFERED=0
+export PYTHONUNBUFFERED=TRUE
+
+export XDG_CACHE_HOME=/tmp/xdg_cache_home
+mkdir -pv $XDG_CACHE_HOME/astropy
 
 ls -tlroa /var/log/containers/
 
