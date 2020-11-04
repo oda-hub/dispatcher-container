@@ -12,23 +12,22 @@ RUN pip install -r /cdci_data_analysis/requirements.txt && \
 
 ADD cdci_osa_plugin /cdci_osa_plugin
 RUN pip install -r /cdci_osa_plugin/requirements.txt && \
-    pip install  /cdci_osa_plugin
+    pip install /cdci_osa_plugin
 
 ADD cdci_spiacs_plugin /cdci_spiacs_plugin
 RUN pip install -r /cdci_spiacs_plugin/requirements.txt && \
-    pip install  /cdci_spiacs_plugin
+    pip install /cdci_spiacs_plugin
 
 ADD cdci_api_plugin /cdci_api_plugin
 RUN pip install -r /cdci_api_plugin/requirements.txt && \
-    pip install  /cdci_api_plugin
+    pip install /cdci_api_plugin
 
 ADD cdci_magic_plugin /cdci_magic_plugin
 RUN pip install -r /cdci_magic_plugin/requirements.txt && \
-    pip install  /cdci_magic_plugin
+    pip install /cdci_magic_plugin
 
 ADD ddaclient /ddaclient
-RUN pip install -r /ddaclient/requirements.txt && \
-    pip install  /ddaclient
+RUN pip install /ddaclient
 
 
 # these will be mounted at runtime
