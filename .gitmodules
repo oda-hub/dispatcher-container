@@ -16,3 +16,6 @@
 [submodule "ddaclient"]
 	path = ddaclient
 	url = https://gitlab.astro.unige.ch/cdci/integral/ddaclient.git
+[submodule "magic-backend"]
+	path = magic-backend
+	url = git@gitlab.astro.unige.ch:cdci/magic/magic-backend.git
