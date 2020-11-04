@@ -15,4 +15,4 @@
 	url = https://gitlab.astro.unige.ch/cdci/cdci_data_analysis.git
 [submodule "ddaclient"]
 	path = ddaclient
-	url = git@gitlab.astro.unige.ch:cdci/integral/ddaclient.git
+	url = https://gitlab.astro.unige.ch/cdci/integral/ddaclient.git
