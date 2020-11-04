@@ -30,7 +30,8 @@ ADD ddaclient /ddaclient
 RUN pip install /ddaclient
 
 ADD magic-backend /magic-backend
-RUN pip install /magic-backend
+RUN pip install -r /magic-backend/requirements.txt && \
+    pip install /magic-backend
 
 # these will be mounted at runtime
 ENV CDCI_OSA_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml
