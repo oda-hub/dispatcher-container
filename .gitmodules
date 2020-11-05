@@ -13,3 +13,6 @@
 [submodule "cdci_data_analysis"]
 	path = cdci_data_analysis
 	url = https://gitlab.astro.unige.ch/cdci/cdci_data_analysis.git
+[submodule "magic-backend "]
+	path = magic-backend 
+	url = https://gitlab.astro.unige.ch/cdci/magic/magic-backend.git
