@@ -1,0 +1,4 @@
+instruments:
+  magic:
+      data_server_url: http://in.internal.odahub.io/staging-1-3/magic/
+      data_server_port: 5001
