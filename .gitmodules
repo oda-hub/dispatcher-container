@@ -1,6 +1,6 @@
-[submodule "cdci_api_plugin"]
-	path = cdci_api_plugin
-	url = https://gitlab.astro.unige.ch/cdci/cdci_api_plugin.git
+[submodule "oda_api"]
+	path = oda_api
+	url = https://gitlab.astro.unige.ch/cdci/oda_api.git
 [submodule "cdci_magic_plugin"]
 	path = cdci_magic_plugin
 	url = https://gitlab.astro.unige.ch/cdci/magic/cdci_magic_plugin.git

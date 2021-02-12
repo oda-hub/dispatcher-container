@@ -18,9 +18,9 @@ ADD cdci_spiacs_plugin /cdci_spiacs_plugin
 RUN pip install -r /cdci_spiacs_plugin/requirements.txt && \
     pip install /cdci_spiacs_plugin
 
-ADD cdci_api_plugin /cdci_api_plugin
-RUN pip install -r /cdci_api_plugin/requirements.txt && \
-    pip install /cdci_api_plugin
+ADD oda_api /oda_api
+RUN pip install -r /oda_api/requirements.txt && \
+    pip install /oda_api
 
 ADD cdci_magic_plugin /cdci_magic_plugin
 RUN pip install -r /cdci_magic_plugin/requirements.txt && \
