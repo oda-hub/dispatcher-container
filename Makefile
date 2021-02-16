@@ -11,7 +11,7 @@ run: build
 		-v /tmp/dev/workdir:/data/dispatcher_scratch \
 		-v $(PWD)/conf:/dispatcher/conf \
 		--rm \
-		-p 8000:8000 \
+		-p 8000:8010 \
 		--name dev-oda-dispatcher \
 		$(image) 
 
