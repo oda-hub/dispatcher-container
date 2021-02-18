@@ -26,3 +26,7 @@ push: build
 	docker tag $(image) $(image_latest)
 	docker push $(image_latest)
 	docker push $(image)
+
+
+submodule-diff:
+	(for k in $(shell git submodule | awk '{print $$2}'); do (cd $$k; pwd; git diff); done)
