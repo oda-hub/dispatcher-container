@@ -5,7 +5,7 @@ RUN pip install pip --upgrade
 ADD requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
-ADD dispatcher-app /cdci_data_analysis
+ADD cdci_data_analysis /cdci_data_analysis
 
 RUN pip install -r /cdci_data_analysis/requirements.txt && \
     pip install /cdci_data_analysis
