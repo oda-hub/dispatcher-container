@@ -11,12 +11,13 @@ password ${CI_JOB_TOKEN}
 chmod 400 $HOME/.netrc
 
 for c in cdci_*; do
-    (
-        cd $c
-        git remote set-url origin $(git remote get-url origin | sed 's/git@/https:\/\//; s/.ch:/.ch\//')
-        git pull origin staging-1.3
-    )
-    git add $c
+  #  (
+  #      cd $c
+  #      git remote set-url origin $(git remote get-url origin | sed 's/git@/https:\/\//; s/.ch:/.ch\//')
+  #      git pull origin staging-1.3
+  #  )
+  echo
+  #  git add $c
 done
 
 git config user.email "oda-bot@odahub.io"
