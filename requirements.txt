@@ -21,3 +21,4 @@ six
 werkzeug<=0.16.1
 python-shell-colors==0.1.11
 flower
+git+https://github.com/integral-observatory/astroquery.git
