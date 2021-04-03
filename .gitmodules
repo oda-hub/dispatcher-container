@@ -18,4 +18,4 @@
 	url = https://gitlab.astro.unige.ch/cdci/magic/magic-backend.git
 [submodule "dispatcher-plugin-integral-all-sky"]
 	path = dispatcher-plugin-integral-all-sky
-	url = git@github.com:oda-hub/dispatcher-plugin-integral-all-sky
+	url = https://github.com:oda-hub/dispatcher-plugin-integral-all-sky

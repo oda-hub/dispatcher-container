@@ -14,9 +14,9 @@ ADD cdci_osa_plugin /cdci_osa_plugin
 RUN pip install -r /cdci_osa_plugin/requirements.txt && \
     pip install /cdci_osa_plugin
 
-ADD cdci_spiacs_plugin /cdci_spiacs_plugin
-RUN pip install -r /cdci_spiacs_plugin/requirements.txt && \
-    pip install /cdci_spiacs_plugin
+ADD dispatcher-plugin-integral-all-sky /dispatcher-plugin-integral-all-sky
+RUN pip install -r /dispatcher-plugin-integral-all-sky/requirements.txt && \
+    pip install /dispatcher-plugin-integral-all-sky
 
 ADD oda_api /oda_api
 RUN pip install -r /oda_api/requirements.txt && \
