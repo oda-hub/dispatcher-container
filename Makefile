@@ -19,8 +19,7 @@ run: build
 build:
 	bash make.sh 
 	git submodule update --init
-	docker build  -t $(image)  \
-		.
+	docker build  -t $(image) .
 
 
 push: build
