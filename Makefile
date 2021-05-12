@@ -16,9 +16,11 @@ run: build
 		--name dev-oda-dispatcher \
 		$(image) 
 
-build:
+update:
 	bash make.sh 
 	git submodule update --init
+
+build:
 	docker build  -t $(image) .
 
 
@@ -32,4 +34,4 @@ submodule-diff:
 	(for k in $(shell git submodule | awk '{print $$2}'); do (cd $$k; pwd; git diff); done)
 
 flower:
-	docker run -it $(image) celery -A cdci_data_analysis.flask_app.tasks.celery flower -l info --port=5555
+	docker run -it --entrypoint celery $(image) -A cdci_data_analysis.flask_app.tasks.celery flower -l info --port=5555
