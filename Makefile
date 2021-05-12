@@ -32,4 +32,4 @@ submodule-diff:
 	(for k in $(shell git submodule | awk '{print $$2}'); do (cd $$k; pwd; git diff); done)
 
 flower:
-	docker run $(image) celery -A cdci_data_analysis.flask_app.tasks.celery flower -l info --port=5555
+	docker run -it $(image) celery -A cdci_data_analysis.flask_app.tasks.celery flower -l info --port=5555
