@@ -30,6 +30,10 @@ ADD magic-backend /magic-backend
 RUN pip install -r /magic-backend/requirements.txt && \
     pip install /magic-backend
 
+ADD dispatcher-plugin-antares /dispatcher-plugin-antares
+RUN pip install -r /dispatcher-plugin-antares/requirements.txt && \
+    pip install /dispatcher-plugin-antares
+
 RUN pip install -r /cdci_data_analysis/requirements.txt && \
     pip install /cdci_data_analysis
 
