@@ -7,7 +7,7 @@ ls -tlroa /var/log/containers/
 
 if true; then
     export DISPATCHER_CONFIG_FILE=/dispatcher/conf/conf_env.yml
-    gunicorn --workers 1 cdci_data_analysis.flask_app.app:app -b 0.0.0.0:8000 --client-max-body-size 100M --log-level DEBUG --timeout 600
+    gunicorn --workers 1 cdci_data_analysis.flask_app.app:app -b 0.0.0.0:8000 --log-level DEBUG --timeout 600
 else
     python /cdci_data_analysis/bin/run_osa_cdci_server.py \
         -conf_file /dispatcher/conf/conf_env.yml \
