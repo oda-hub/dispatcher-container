@@ -34,3 +34,4 @@ simplejson
 simple_logger
 six
 werkzeug<=0.16.1
+pandas
