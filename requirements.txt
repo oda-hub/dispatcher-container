@@ -5,7 +5,7 @@ git+https://github.com/integral-observatory/astroquery.git
 blinker
 bokeh==0.12.16
 cdci_data_analysis
-celery
+celery==4.4.7 
 ddaclient>=1.1.6
 decorator
 flask
