@@ -7,9 +7,6 @@ RUN pip install -r /requirements.txt
 
 ADD cdci_data_analysis /cdci_data_analysis
 
-RUN pip install -r /cdci_data_analysis/requirements.txt && \
-    pip install /cdci_data_analysis
-
 ADD cdci_osa_plugin /cdci_osa_plugin
 RUN pip install -r /cdci_osa_plugin/requirements.txt && \
     pip install /cdci_osa_plugin
@@ -32,6 +29,9 @@ RUN pip install /ddaclient
 ADD magic-backend /magic-backend
 RUN pip install -r /magic-backend/requirements.txt && \
     pip install /magic-backend
+
+RUN pip install -r /cdci_data_analysis/requirements.txt && \
+    pip install /cdci_data_analysis
 
 # these will be mounted at runtime
 ENV DISPATCHER_CONFIG_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml 
