@@ -8,8 +8,7 @@ RUN pip install -r /requirements.txt
 ADD cdci_data_analysis /cdci_data_analysis
 
 ADD cdci_osa_plugin /cdci_osa_plugin
-RUN pip install -r /cdci_osa_plugin/requirements.txt && \
-    pip install /cdci_osa_plugin
+RUN pip install /cdci_osa_plugin
 
 ADD dispatcher-plugin-integral-all-sky /dispatcher-plugin-integral-all-sky
 RUN pip install -r /dispatcher-plugin-integral-all-sky/requirements.txt && \
