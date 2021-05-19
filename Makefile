@@ -16,6 +16,9 @@ run: build
 		--name dev-oda-dispatcher \
 		$(image) 
 
+prepare-js9:
+	bash make.sh $@
+
 update:
 	bash make.sh 
 	git submodule update --init
