@@ -37,6 +37,7 @@ RUN pip install -r /cdci_data_analysis/requirements.txt && \
     pip install /cdci_data_analysis
 
 ADD static-js9 /static-js9 
+ENV DISPATCHER_JS9_STATIC_DIR /static-js9
 
 # these will be mounted at runtime
 ENV DISPATCHER_CONFIG_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml 
