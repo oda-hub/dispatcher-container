@@ -11,6 +11,7 @@ WORK_DIR=$PWD/$(date +%Y-%m-%d-%H-%M-%S)-$$
 ( 
     mkdir -pv $WORKDIR
     cd $WORKDIR
+    echo -e "\033[31mworking in $PWD\033[0m"
 
     python /cdci_data_analysis/bin/run_osa_cdci_server.py \
         -conf_file /dispatcher/conf/conf_env.yml \
