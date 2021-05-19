@@ -36,7 +36,12 @@ RUN pip install -r /dispatcher-plugin-antares/requirements.txt && \
 RUN pip install -r /cdci_data_analysis/requirements.txt && \
     pip install /cdci_data_analysis
 
-ADD js9/js /data/dispatcher_scratch/static/js9
+# maybe just static?
+ADD js9 /js9 
+RUN cd /js9 && \
+    ./configure --with-webdir=/static-js9 && \
+    make install
+
 
 # these will be mounted at runtime
 ENV DISPATCHER_CONFIG_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml 
