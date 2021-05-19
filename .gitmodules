@@ -19,3 +19,6 @@
 [submodule "dispatcher-plugin-integral-all-sky"]
 	path = dispatcher-plugin-integral-all-sky
 	url = https://github.com:oda-hub/dispatcher-plugin-integral-all-sky
+[submodule "js9"]
+	path = js9
+	url = https://github.com/ericmandel/js9
