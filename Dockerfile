@@ -47,5 +47,8 @@ ENV CDCI_MAGIC_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/magic_data_server_conf.y
 
 WORKDIR /data/dispatcher_scratch
 
+RUN cd /data; \
+    curl https://www.isdc.unige.ch/~savchenk/dispatcher-plugin-integral-data-dummy_prods-default.tgz | tar xvf - --strip-components 1
+
 ADD entrypoint.sh /dispatcher/entrypoint.sh
 ENTRYPOINT bash /dispatcher/entrypoint.sh
