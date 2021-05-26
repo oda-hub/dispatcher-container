@@ -33,6 +33,10 @@ ADD dispatcher-plugin-antares /dispatcher-plugin-antares
 RUN pip install -r /dispatcher-plugin-antares/requirements.txt && \
     pip install /dispatcher-plugin-antares
 
+ADD dispatcher-plugin-polar /dispatcher-plugin-polar
+RUN pip install -r /dispatcher-plugin-polar/requirements.txt && \
+    pip install /dispatcher-plugin-polar
+
 RUN pip install -r /cdci_data_analysis/requirements.txt && \
     pip install /cdci_data_analysis
 
