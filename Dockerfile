@@ -1,13 +1,13 @@
 FROM python:3.8
 #FROM integralsw/osa-python:11.1-11-g024d72b4-20200722-185528-refcat-43.0-heasoft-6.28-python-3.8.5
 
-RUN echo 'source /init.sh' >> ~/.bashrc
+#RUN echo 'source /init.sh' >> ~/.bashrc
 
-SHELL [ "bash", "-c" ]
+#SHELL [ "bash", "-c" ]
 
-RUN export && \
-    which fstatistic && \
-    cat /init.sh
+#RUN export && \
+#    which fstatistic && \
+#    cat /init.sh
 
 RUN pip install pip --upgrade
 
