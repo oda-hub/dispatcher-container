@@ -8,6 +8,8 @@ ls -tlroa /var/log/containers/
 
 ( 
     export HOME_OVERRRIDE=$PWD/runtime-home
+    mkdir -pv $HOME_OVERRRIDE
+
     source /init.sh
     
     python -c 'import xspec; print(xspec)'
