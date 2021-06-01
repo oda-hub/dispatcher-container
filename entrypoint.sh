@@ -7,7 +7,10 @@ ls -tlroa /var/log/containers/
 
 
 ( 
+    export HOME_OVERRRIDE=/tmp/home
     source /init.sh
+    
+    python -c 'import xspec; print(xspec)'
 
    # it might be better not to change directory, if jobs need to be preserved between restarts
    # WORK_DIR=$PWD/$(date +%Y-%m-%d-%H-%M-%S)-$$
