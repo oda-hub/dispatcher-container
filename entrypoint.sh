@@ -7,7 +7,7 @@ ls -tlroa /var/log/containers/
 
 
 ( 
-    export HOME_OVERRRIDE=/tmp/home
+    export HOME_OVERRRIDE=$PWD/runtime-home
     source /init.sh
     
     python -c 'import xspec; print(xspec)'
