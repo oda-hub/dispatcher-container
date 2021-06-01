@@ -7,6 +7,8 @@ ls -tlroa /var/log/containers/
 
 
 ( 
+    source /init.sh
+
    # it might be better not to change directory, if jobs need to be preserved between restarts
    # WORK_DIR=$PWD/$(date +%Y-%m-%d-%H-%M-%S)-$$
    # mkdir -pv $WORK_DIR
