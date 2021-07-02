@@ -23,6 +23,7 @@ ls -tlroa /var/log/containers/
     if [ ${DISPATCHER_GUNICORN:-yes} == "yes" ]; then
         gunicorn \
             'cdci_data_analysis.flask_app.app:load_cli_app("/dispatcher/conf/conf_env.yml")' \
+            --bind 0.0.0.0:8000 \
             --timeout 300 \
             --log-level debug
     else
