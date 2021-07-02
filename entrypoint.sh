@@ -20,8 +20,15 @@ ls -tlroa /var/log/containers/
    # cd $WORK_DIR
     echo -e "\033[31mworking in $PWD\033[0m"
 
-    python /cdci_data_analysis/bin/run_osa_cdci_server.py \
-        -conf_file /dispatcher/conf/conf_env.yml \
-        -debug \
-        -use_gunicorn 2>&1 | tee -a /var/log/containers/${CONTAINER_NAME} -
+    if [ ${DISPATCHER_GUNICORN:-yes} == "yes" ]; then
+        gunicorn \
+            'cdci_data_analysis.flask_app.app:load_cli_app("/dispatcher/conf/conf_env.yml")' \
+            --timeout 300 \
+            --log-level debug
+    else
+        python /cdci_data_analysis/bin/run_osa_cdci_server.py \
+            -conf_file /dispatcher/conf/conf_env.yml \
+            -debug \
+            -use_gunicorn 2>&1 | tee -a /var/log/containers/${CONTAINER_NAME} -
+    fi
 )
