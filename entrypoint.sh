@@ -24,6 +24,8 @@ ls -tlroa /var/log/containers/
         gunicorn \
             'cdci_data_analysis.flask_app.app:load_cli_app("/dispatcher/conf/conf_env.yml")' \
             --bind 0.0.0.0:8000 \
+            --workers 8 \
+            --preload \
             --timeout 300 \
             --log-level debug
     else
