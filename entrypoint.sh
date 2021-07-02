@@ -20,7 +20,7 @@ ls -tlroa /var/log/containers/
    # cd $WORK_DIR
     echo -e "\033[31mworking in $PWD\033[0m"
 
-    if [ ${DISPATCHER_GUNICORN:-yes} == "yes" ]; then
+    if [ ${DISPATCHER_GUNICORN:-no} == "yes" ]; then
         gunicorn \
             'cdci_data_analysis.flask_app.app:load_cli_app("/dispatcher/conf/conf_env.yml")' \
             --bind 0.0.0.0:8000 \
