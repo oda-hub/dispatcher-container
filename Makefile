@@ -11,6 +11,7 @@ run: build
 		-v /tmp/dev/workdir:/data/dispatcher_scratch \
 		-v $(PWD)/conf:/dispatcher/conf \
 		-e DISPATCHER_CONFIG_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml \
+		-e DISPATCHER_GUNICORN=yes \
 		--rm \
 		-p 8010:8000 \
 		--name dev-oda-dispatcher \
