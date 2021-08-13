@@ -26,7 +26,7 @@ ls -tlroa /var/log/containers/
             --bind 0.0.0.0:8000 \
             --workers 8 \
             --preload \
-            --timeout 300 \
+            --timeout 900 \
             --log-level debug
     else
         python /cdci_data_analysis/bin/run_osa_cdci_server.py \
