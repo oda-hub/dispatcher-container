@@ -4,7 +4,7 @@ image=odahub/dispatcher:$(version)
 image_latest=odahub/dispatcher:latest
 
 run: build
-	docker run \
+	DOCKER_BUILDKIT=1 docker run \
 		-it \
 		-u $(shell id -u) \
 		-v /tmp/dev/log:/var/log/containers \
