@@ -4,7 +4,7 @@ image=odahub/dispatcher:$(version)
 image_latest=odahub/dispatcher:latest
 
 run: build
-	DOCKER_BUILDKIT=1 docker run \
+	docker run \
 		-it \
 		-u $(shell id -u) \
 		-v /tmp/dev/log:/var/log/containers \
@@ -25,7 +25,7 @@ update:
 	git submodule update --init
 
 build:
-	docker build  -t $(image) .
+	DOCKER_BUILDKIT=1 docker build  -t $(image) .
 
 
 push: build
