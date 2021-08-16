@@ -20,7 +20,7 @@ logging_tree
 matplotlib
 numpy
 oda_api>=1.1.7
-oda-knowledge-base[rdf,cwl]
+oda-knowledge-base[rdf,cwl]==0.7.18
 pathlib
 psutil
 pyjwt
