@@ -27,7 +27,7 @@ ls -tlroa /var/log/containers/
             --workers 8 \
             --preload \
             --timeout 900 \
-            --limit-request-line 8190 \
+#            --limit-request-line 8190 \
             --log-level debug
     else
         python /cdci_data_analysis/bin/run_osa_cdci_server.py \
