@@ -24,8 +24,12 @@ update:
 	bash make.sh 
 	git submodule update --init
 
-build:
+build: static-js9
 	DOCKER_BUILDKIT=1 docker build  -t $(image) .
+
+
+static-js9:
+	bash make.sh prepare-js9
 
 
 push: build
