@@ -28,19 +28,9 @@ RUN source /init.sh && \
     pip install -r /oda_api/requirements.txt && \
     pip install /oda_api
 
-ADD cdci_magic_plugin /cdci_magic_plugin
-RUN source /init.sh && \
-    pip install -r /cdci_magic_plugin/requirements.txt && \
-    pip install /cdci_magic_plugin
-
 ADD ddaclient /ddaclient
 RUN source /init.sh && \
     pip install /ddaclient
-
-ADD magic-backend /magic-backend
-RUN source /init.sh && \
-    pip install -r /magic-backend/requirements.txt && \
-    pip install /magic-backend
 
 ADD dispatcher-plugin-antares /dispatcher-plugin-antares
 RUN source /init.sh && \
@@ -64,7 +54,6 @@ ENV DISPATCHER_JS9_STATIC_DIR /static-js9
 ENV DISPATCHER_CONFIG_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml 
 ENV CDCI_OSA_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml
 ENV CDCI_POLAR_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/polar_data_server_conf.yml
-ENV CDCI_MAGIC_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/magic_data_server_conf.yml
 ENV CDCI_ANTARES_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/antares_data_server_conf.yml
 
 WORKDIR /data/dispatcher_scratch

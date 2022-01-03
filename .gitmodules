@@ -1,6 +1,6 @@
 [submodule "oda_api"]
 	path = oda_api
-        url = https://github.com/oda-hub/oda_api.git
+	url = https://github.com/oda-hub/oda_api.git
 [submodule "cdci_osa_plugin"]
 	path = cdci_osa_plugin
         url = https://github.com/oda-hub/dispatcher-plugin-integral.git
