@@ -7,9 +7,6 @@
 [submodule "cdci_osa_plugin"]
 	path = cdci_osa_plugin
 	url = https://gitlab.astro.unige.ch/cdci/integral/cdci_osa_plugin.git
-[submodule "cdci_spiacs_plugin"]
-	path = cdci_spiacs_plugin
-	url = https://gitlab.astro.unige.ch/cdci/integral/cdci_spiacs_plugin.git
 [submodule "cdci_data_analysis"]
 	path = cdci_data_analysis
 	url = https://gitlab.astro.unige.ch/cdci/cdci_data_analysis.git
@@ -19,3 +16,12 @@
 [submodule "magic-backend"]
 	path = magic-backend
 	url = https://gitlab.astro.unige.ch/cdci/magic/magic-backend.git
+[submodule "dispatcher-plugin-integral-all-sky"]
+	path = dispatcher-plugin-integral-all-sky
+	url = https://github.com:oda-hub/dispatcher-plugin-integral-all-sky
+[submodule "js9"]
+	path = js9
+	url = https://github.com/ericmandel/js9
+[submodule "dispatcher-plugin-polar"]
+	path = dispatcher-plugin-polar
+	url = git@github.com:oda-hub/dispatcher-plugin-polar.git

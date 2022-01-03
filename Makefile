@@ -10,16 +10,22 @@ run: build
 		-v /tmp/dev/log:/var/log/containers \
 		-v /tmp/dev/workdir:/data/dispatcher_scratch \
 		-v $(PWD)/conf:/dispatcher/conf \
+		-e DISPATCHER_CONFIG_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml \
+		-e DISPATCHER_GUNICORN=yes \
 		--rm \
 		-p 8010:8000 \
 		--name dev-oda-dispatcher \
 		$(image) 
 
-build:
+prepare-js9:
+	bash make.sh $@
+
+update:
 	bash make.sh 
 	git submodule update --init
-	docker build  -t $(image)  \
-		.
+
+build:
+	DOCKER_BUILDKIT=1 docker build  -t $(image) .
 
 
 push: build
@@ -30,3 +36,6 @@ push: build
 
 submodule-diff:
 	(for k in $(shell git submodule | awk '{print $$2}'); do (cd $$k; pwd; git diff); done)
+
+flower:
+	docker run -it --entrypoint celery $(image) -A cdci_data_analysis.flask_app.tasks.celery flower -l info --port=5555
