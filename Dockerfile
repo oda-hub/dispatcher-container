@@ -1,7 +1,10 @@
 FROM python:3.8
 FROM integralsw/osa-python:11.1-11-g024d72b4-20200722-185528-refcat-43.0-heasoft-6.28-python-3.8.5
 
+
 SHELL [ "bash", "-c" ]
+
+#RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 
 ADD requirements.txt /requirements.txt
 
@@ -41,6 +44,18 @@ ADD dispatcher-plugin-polar /dispatcher-plugin-polar
 RUN source /init.sh && \
     pip install -r /dispatcher-plugin-polar/requirements.txt && \
     pip install /dispatcher-plugin-polar
+
+ADD dispatcher-plugin-gw /dispatcher-plugin-gw
+RUN source /init.sh && \
+    pip install /dispatcher-plugin-gw
+    #(cd /dispatcher-plugin-gw; poetry install)
+    #missing some section? poetry#3084?
+
+ADD dispatcher-plugin-legacysurvey /dispatcher-plugin-legacysurvey
+RUN source /init.sh && \
+    pip install /dispatcher-plugin-legacysurvey
+    #(cd /dispatcher-plugin-gw; poetry install)
+    #missing some section? poetry#3084?
 
 ADD cdci_data_analysis /cdci_data_analysis
 RUN source /init.sh && \

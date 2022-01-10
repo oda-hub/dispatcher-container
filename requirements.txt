@@ -1,7 +1,6 @@
 aiosmtpd
 astropy>=3.2
-#astroquery
-git+https://github.com/integral-observatory/astroquery.git
+astroquery
 blinker
 bokeh==0.12.16
 cdci_data_analysis

@@ -22,3 +22,9 @@
 [submodule "dispatcher-plugin-antares"]
 	path = dispatcher-plugin-antares
 	url = https://github.com/oda-hub/dispatcher-plugin-antares.git
+[submodule "dispatcher-plugin-gw"]
+	path = dispatcher-plugin-gw
+	url = https://github.com/oda-hub/dispatcher-plugin-gw.git
+[submodule "dispatcher-plugin-legacysurvey"]
+	path = dispatcher-plugin-legacysurvey
+	url = https://github.com/oda-hub/dispatcher-plugin-legacysurvey.git
