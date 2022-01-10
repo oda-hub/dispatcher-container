@@ -67,6 +67,7 @@ ENV DISPATCHER_JS9_STATIC_DIR /static-js9
 
 # why is it needed? why is it in a wrong place?
 ADD dispatcher-plugin-gw/dispatcher_plugin_gw/config_dir/data_server_conf.yml /dispatcher/conf/conf.d/gw_data_server_conf.yml
+ADD dispatcher-plugin-legacysurvey/dispatcher_plugin_legacysurvey/config_dir/data_server_conf.yml /dispatcher/conf/conf.d/legacysurvey_data_server_conf.yml
 
 # these will be mounted at runtime
 ENV DISPATCHER_CONFIG_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml 
