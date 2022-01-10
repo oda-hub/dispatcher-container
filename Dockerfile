@@ -65,6 +65,9 @@ RUN source /init.sh && \
 ADD static-js9 /static-js9 
 ENV DISPATCHER_JS9_STATIC_DIR /static-js9
 
+# why is it needed? why is it in a wrong place?
+ADD dispatcher-plugin-gw/dispatcher_plugin_gw/config_dir/data_server_conf.yml /dispatcher/conf/conf.d/gw_data_server_conf.yml
+
 # these will be mounted at runtime
 ENV DISPATCHER_CONFIG_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml 
 ENV CDCI_OSA_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml
