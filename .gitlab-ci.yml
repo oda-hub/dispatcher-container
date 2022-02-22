@@ -1,25 +1,25 @@
-test:
-  image: python:3.8
-  stage: test
-  before_script:
-    - pip install pytest
-    - for d in $PWD/cdci_*; do ( pip install $d || echo "$d is not installable"; ); done
-  script:
-    - bash make.sh
-    - git submodule update --init
-    - for d in cdci_osa*; do ( cd $d; [ -d $d/tests ] && python -m pytest tests; ) || echo "it's ok"; done
-  only:
-    - staging-1.3
-    - ci
+# test:
+#   image: python:3.8
+#   stage: test
+#   before_script:
+#     - pip install pytest
+#     - for d in $PWD/cdci_*; do ( pip install $d || echo "$d is not installable"; ); done
+#   script:
+#     - bash make.sh
+#     - git submodule update --init
+#     - for d in cdci_osa*; do ( cd $d; [ -d $d/tests ] && python -m pytest tests; ) || echo "it's ok"; done
+#   only:
+#     - staging-1.3
+#     - ci
 
 docker-build:
   image: docker:stable
   stage: build
   before_script:
     - apk add git openssh make bash
+  script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
     - docker info
-  script:
     - make push
   only:
     - staging-1.3

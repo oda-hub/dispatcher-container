@@ -1,27 +1,30 @@
 [submodule "oda_api"]
 	path = oda_api
-	url = https://gitlab.astro.unige.ch/cdci/oda_api.git
-[submodule "cdci_magic_plugin"]
-	path = cdci_magic_plugin
-	url = https://gitlab.astro.unige.ch/cdci/magic/cdci_magic_plugin.git
+	url = https://github.com/oda-hub/oda_api.git
 [submodule "cdci_osa_plugin"]
 	path = cdci_osa_plugin
-	url = https://gitlab.astro.unige.ch/cdci/integral/cdci_osa_plugin.git
+        url = https://github.com/oda-hub/dispatcher-plugin-integral.git
 [submodule "cdci_data_analysis"]
 	path = cdci_data_analysis
-	url = https://gitlab.astro.unige.ch/cdci/cdci_data_analysis.git
+        url = https://github.com/oda-hub/dispatcher-app.git
 [submodule "ddaclient"]
 	path = ddaclient
-	url = https://gitlab.astro.unige.ch/cdci/integral/ddaclient.git
-[submodule "magic-backend"]
-	path = magic-backend
-	url = https://gitlab.astro.unige.ch/cdci/magic/magic-backend.git
+        url = https://github.com/oda-hub/ddaclient.git
 [submodule "dispatcher-plugin-integral-all-sky"]
 	path = dispatcher-plugin-integral-all-sky
-	url = https://github.com:oda-hub/dispatcher-plugin-integral-all-sky
+	url = https://github.com/oda-hub/dispatcher-plugin-integral-all-sky.git
 [submodule "js9"]
 	path = js9
 	url = https://github.com/ericmandel/js9
 [submodule "dispatcher-plugin-polar"]
 	path = dispatcher-plugin-polar
-	url = git@github.com:oda-hub/dispatcher-plugin-polar.git
+	url = https://github.com/oda-hub/dispatcher-plugin-polar.git
+[submodule "dispatcher-plugin-antares"]
+	path = dispatcher-plugin-antares
+	url = https://github.com/oda-hub/dispatcher-plugin-antares.git
+[submodule "dispatcher-plugin-gw"]
+	path = dispatcher-plugin-gw
+	url = https://github.com/oda-hub/dispatcher-plugin-gw.git
+[submodule "dispatcher-plugin-legacysurvey"]
+	path = dispatcher-plugin-legacysurvey
+	url = https://github.com/oda-hub/dispatcher-plugin-legacysurvey.git

@@ -1,7 +1,10 @@
 FROM python:3.8
 FROM integralsw/osa-python:11.1-11-g024d72b4-20200722-185528-refcat-43.0-heasoft-6.28-python-3.8.5
 
+
 SHELL [ "bash", "-c" ]
+
+#RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 
 ADD requirements.txt /requirements.txt
 
@@ -28,19 +31,9 @@ RUN source /init.sh && \
     pip install -r /oda_api/requirements.txt && \
     pip install /oda_api
 
-ADD cdci_magic_plugin /cdci_magic_plugin
-RUN source /init.sh && \
-    pip install -r /cdci_magic_plugin/requirements.txt && \
-    pip install /cdci_magic_plugin
-
 ADD ddaclient /ddaclient
 RUN source /init.sh && \
     pip install /ddaclient
-
-ADD magic-backend /magic-backend
-RUN source /init.sh && \
-    pip install -r /magic-backend/requirements.txt && \
-    pip install /magic-backend
 
 ADD dispatcher-plugin-antares /dispatcher-plugin-antares
 RUN source /init.sh && \
@@ -52,6 +45,18 @@ RUN source /init.sh && \
     pip install -r /dispatcher-plugin-polar/requirements.txt && \
     pip install /dispatcher-plugin-polar
 
+ADD dispatcher-plugin-gw /dispatcher-plugin-gw
+RUN source /init.sh && \
+    pip install /dispatcher-plugin-gw
+    #(cd /dispatcher-plugin-gw; poetry install)
+    #missing some section? poetry#3084?
+
+ADD dispatcher-plugin-legacysurvey /dispatcher-plugin-legacysurvey
+RUN source /init.sh && \
+    pip install /dispatcher-plugin-legacysurvey
+    #(cd /dispatcher-plugin-gw; poetry install)
+    #missing some section? poetry#3084?
+
 ADD cdci_data_analysis /cdci_data_analysis
 RUN source /init.sh && \
     pip install -r /cdci_data_analysis/requirements.txt && \
@@ -60,11 +65,14 @@ RUN source /init.sh && \
 ADD static-js9 /static-js9 
 ENV DISPATCHER_JS9_STATIC_DIR /static-js9
 
+# why is it needed? why is it in a wrong place?
+ADD dispatcher-plugin-gw/dispatcher_plugin_gw/config_dir/data_server_conf.yml /dispatcher/conf/conf.d/gw_data_server_conf.yml
+ADD dispatcher-plugin-legacysurvey/dispatcher_plugin_legacysurvey/config_dir/data_server_conf.yml /dispatcher/conf/conf.d/legacysurvey_data_server_conf.yml
+
 # these will be mounted at runtime
 ENV DISPATCHER_CONFIG_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml 
 ENV CDCI_OSA_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml
 ENV CDCI_POLAR_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/polar_data_server_conf.yml
-ENV CDCI_MAGIC_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/magic_data_server_conf.yml
 ENV CDCI_ANTARES_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/antares_data_server_conf.yml
 
 WORKDIR /data/dispatcher_scratch
