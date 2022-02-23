@@ -32,6 +32,6 @@ requests
 simplejson
 simple_logger
 six
-werkzeug<=0.16.1
+werkzeug
 pandas
 pylogstash_context>=0.1.19
