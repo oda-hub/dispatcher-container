@@ -28,3 +28,6 @@
 [submodule "dispatcher-plugin-legacysurvey"]
 	path = dispatcher-plugin-legacysurvey
 	url = https://github.com/oda-hub/dispatcher-plugin-legacysurvey.git
+[submodule "dispatcher-plugin-nb2workflow"]
+	path = dispatcher-plugin-nb2workflow
+	url = https://github.com/oda-hub/dispatcher-plugin-nb2workflow.git
