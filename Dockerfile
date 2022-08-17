@@ -57,6 +57,10 @@ RUN source /init.sh && \
     #(cd /dispatcher-plugin-gw; poetry install)
     #missing some section? poetry#3084?
 
+ADD dispatcher-plugin-nb2workflow /dispatcher-plugin-nb2workflow
+RUN source /init.sh && \
+    pip install /dispatcher-plugin-nb2workflow
+
 ADD cdci_data_analysis /cdci_data_analysis
 RUN source /init.sh && \
     pip install -r /cdci_data_analysis/requirements.txt && \
@@ -74,6 +78,7 @@ ENV DISPATCHER_CONFIG_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml
 ENV CDCI_OSA_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml
 ENV CDCI_POLAR_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/polar_data_server_conf.yml
 ENV CDCI_ANTARES_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/antares_data_server_conf.yml
+ENV CDCI_NB2W_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/nb_data_server_conf.yml
 
 WORKDIR /data/dispatcher_scratch
 
