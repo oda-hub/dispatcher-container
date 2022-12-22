@@ -2,7 +2,6 @@ aiosmtpd
 astropy>=3.2
 astroquery
 blinker
-bokeh==0.12.16
 cdci_data_analysis
 celery==5.2.2 
 ddaclient>=1.1.6
@@ -35,3 +34,4 @@ six
 werkzeug
 pandas
 pylogstash_context>=0.1.19
+h5py>=3.5.0
