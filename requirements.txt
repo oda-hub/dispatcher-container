@@ -16,7 +16,7 @@ jsonschema
 json_tricks
 logging_tree
 matplotlib
-numpy==1.21
+numpy==1.22.0
 oda_api>=1.1.7
 oda-knowledge-base[rdf,cwl]==0.7.18
 pathlib
