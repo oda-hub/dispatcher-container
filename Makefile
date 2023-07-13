@@ -1,6 +1,8 @@
 version ?= $(shell git describe --always)
+version_sortable ?= $(shell git log -1 --format="%at" | xargs -I{} date -d @{} +%y%m%d-%H%M%S)
 
 image=odahub/dispatcher:$(version)
+image_sortable=odahub/dispatcher:$(version_sortable)
 image_latest=odahub/dispatcher:latest
 
 run: build
@@ -34,7 +36,9 @@ static-js9:
 
 push: build
 	docker tag $(image) $(image_latest)
+	docker tag $(image) $(image_sortable)
 	docker push $(image_latest)
+	docker push $(image_sortable)
 	docker push $(image)
 
 
