@@ -11,6 +11,9 @@ ls -tlroa /var/log/containers/
     mkdir -pv $HOME_OVERRRIDE
 
     source /init.sh
+
+    export TMPDIR=/scratch/tmpdir
+    mkdir -pv TMPDIR
     
     python -c 'import xspec; print(xspec)'
 
