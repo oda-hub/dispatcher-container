@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3.12
 FROM integralsw/osa-python:11.1-11-g024d72b4-20200722-185528-refcat-43.0-heasoft-6.28-python-3.8.5
 
 
