@@ -1,5 +1,6 @@
-FROM python:3.12
-FROM integralsw/osa-python:11.1-11-g024d72b4-20200722-185528-refcat-43.0-heasoft-6.28-python-3.8.5
+# the osa-python-docker image with heasoft 6.33 does not contain xspec
+# FROM integralsw/osa-python:11.2-2-g667521a3-20220403-190332-refcat-43.0-heasoft-6.33-python-3.10.11
+FROM integralsw/osa-python:11.2-2-g667521a3-20220403-190332-refcat-43.0-heasoft-6.32.1-python-3.10.11
 
 
 SHELL [ "bash", "-c" ]
