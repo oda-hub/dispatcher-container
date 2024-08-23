@@ -10,9 +10,8 @@ SHELL [ "bash", "-c" ]
 ADD static-js9 /static-js9 
 ENV DISPATCHER_JS9_STATIC_DIR /static-js9
 
-RUN source /init.sh 
-# && \
-#     python -c 'import xspec; print(xspec)'
+RUN source /init.sh && \
+    python -c 'import xspec; print(xspec)'
 
 # why is it needed? why is it in a wrong place?
 ADD dispatcher-plugin-gw/dispatcher_plugin_gw/config_dir/data_server_conf.yml /dispatcher/conf/conf.d/gw_data_server_conf.yml
