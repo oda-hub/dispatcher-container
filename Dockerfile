@@ -1,4 +1,5 @@
-# using the osa-python-docker image compiled with python3.10 and heasoft 6.32.1
+# the osa-python-docker image with heasoft 6.33 does not contain xspec
+# FROM integralsw/osa-python:11.2-2-g667521a3-20220403-190332-refcat-43.0-heasoft-6.33-python-3.10.11
 FROM integralsw/osa-python:11.2-2-g667521a3-20220403-190332-refcat-43.0-heasoft-6.32.1-python-3.10.11
 
 
