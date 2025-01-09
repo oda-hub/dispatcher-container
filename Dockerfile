@@ -61,5 +61,8 @@ WORKDIR /data/dispatcher_scratch
 RUN cd /data; \
     curl https://www.isdc.unige.ch/~savchenk/dispatcher-plugin-integral-data-dummy_prods-default.tgz | tar xzvf - --strip-components 1
 
+# For libmagic to return right mimetype for fits files (otherwise it's octet-stream). Newer base image may not need it.
+RUN echo '0 string SIMPLE\ \ = FITS image data' >> /etc/magic ; echo '!:mime image/fits' >> /etc/magic
+
 ADD entrypoint.sh /dispatcher/entrypoint.sh
 ENTRYPOINT bash /dispatcher/entrypoint.sh
