@@ -35,7 +35,7 @@ jobs:
         submodules: recursive
         
     - name: Update submodules to master
-      run: git submodule foreach 'git reset --hard origin/`awk "/$name/ {print \$2}" branches.yaml`'
+      run: git submodule foreach 'git reset --hard origin/`awk "/$name/ {print \$2}" $toplevel/branches.yaml`'
     
     - run: make static-js9
 
