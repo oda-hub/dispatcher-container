@@ -1,0 +1,11 @@
+oda_api: master
+cdci_osa_plugin: master
+cdci_data_analysis: master
+ddaclient: master
+dispatcher-plugin-integral-all-sky: master
+js9: master
+dispatcher-plugin-polar: master
+dispatcher-plugin-antares: master
+dispatcher-plugin-gw: master
+dispatcher-plugin-legacysurvey: master
+dispatcher-plugin-nb2workflow: master
