@@ -1,6 +1,6 @@
 oda_api: master
 cdci_osa_plugin: master
-cdci_data_analysis: master
+cdci_data_analysis: apicode-attachment-mimetype
 ddaclient: master
 dispatcher-plugin-integral-all-sky: master
 js9: master
