@@ -72,7 +72,7 @@ jobs:
         images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
         tags: |
           type=raw,value={{sha}}-{{date 'YYMMDDHHmmss'}},enable=${{github.event_name != 'pull_request'}}
-          type=raw,value={{sha}}-{{branch}}-{{date 'YYMMDDHHmmss'}},enable=${{github.event_name == 'pull_request'}}
+          type=raw,value={{sha}}-${{ github.head_ref }}-{{date 'YYMMDDHHmmss'}},enable=${{github.event_name == 'pull_request'}}
 
     # Build and push Docker image with Buildx (don't push on PR if not labeled)
     # https://github.com/docker/build-push-action
