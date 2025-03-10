@@ -34,7 +34,7 @@ jobs:
       with:
         submodules: recursive
         
-    - name: Update submodules to master
+    - name: Update submodules to specified branches
       run: git submodule foreach 'git reset --hard origin/`awk "/$name/ {print \\$2}" $toplevel/branches.yaml`'
     
     - run: make static-js9
@@ -56,7 +56,7 @@ jobs:
     # Login against a Docker registry except on PR
     # https://github.com/docker/login-action
     - name: Log into registry ${{ env.REGISTRY }}
-      if: github.event_name != 'pull_request'
+      if: github.event_name != 'pull_request' || contains(github.event.pull_request.labels.*.name, 'publish-image')
       uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d # v3.0.0
       with:
         registry: ${{ env.REGISTRY }}
@@ -71,16 +71,17 @@ jobs:
       with:
         images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
         tags: |
-          type=raw,value={{sha}}-{{date 'YYMMDDHHmmss'}}
+          type=raw,value={{sha}}-{{date 'YYMMDDHHmmss'}},enable=${{github.event_name != 'pull_request'}}
+          type=raw,value={{sha}}-{{branch}}-{{date 'YYMMDDHHmmss'}},enable=${{github.event_name == 'pull_request'}}
 
-    # Build and push Docker image with Buildx (don't push on PR)
+    # Build and push Docker image with Buildx (don't push on PR if not labeled)
     # https://github.com/docker/build-push-action
     - name: Build and push Docker image
       id: build-and-push
       uses: docker/build-push-action@0565240e2d4ab88bba5387d719585280857ece09 # v5.0.0
       with:
         context: .
-        push: ${{ github.event_name != 'pull_request' }}
+        push: ${{ github.event_name != 'pull_request' || contains(github.event.pull_request.labels.*.name, 'publish-image') }}
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
         cache-from: type=gha
