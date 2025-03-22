@@ -59,7 +59,9 @@ RUN source /init.sh && \
 WORKDIR /data/dispatcher_scratch
 
 RUN cd /data; \
-    curl https://www.isdc.unige.ch/~savchenk/dispatcher-plugin-integral-data-dummy_prods-default.tgz | tar xzvf - --strip-components 1
+    curl https://www.isdc.unige.ch/~savchenk/dispatcher-plugin-integral-data-dummy_prods-default.tgz | tar xzvf - --strip-components 1 ; \
+    mkdir -p dummy_prods && \
+    curl -o dummy_prods/query_spiacs_lc.txt  https://raw.githubusercontent.com/oda-hub/dispatcher-plugin-integral-all-sky/master/dummy_prods/query_spiacs_lc.txt
 
 # For libmagic to return right mimetype for fits files (otherwise it's octet-stream). Newer base image may not need it.
 RUN echo '0 string SIMPLE\ \ = FITS image data' >> /etc/magic ; echo '!:mime image/fits' >> /etc/magic
