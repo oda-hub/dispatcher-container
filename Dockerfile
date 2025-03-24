@@ -24,6 +24,7 @@ ENV CDCI_OSA_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/osa_data_server_conf.yml
 ENV CDCI_POLAR_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/polar_data_server_conf.yml
 ENV CDCI_ANTARES_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/antares_data_server_conf.yml
 ENV CDCI_NB2W_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/nb_data_server_conf.yml
+ENV CDCI_SPIACS_PLUGIN_CONF_FILE=/dispatcher/conf/conf.d/spiacs_data_server_conf.yml
 
 
 ADD requirements.txt /requirements.txt
