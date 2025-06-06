@@ -11,6 +11,8 @@ SHELL [ "bash", "-c" ]
 ADD static-js9 /static-js9 
 ENV DISPATCHER_JS9_STATIC_DIR /static-js9
 
+RUN yum -y install postgresql-devel
+
 RUN source /init.sh && \
     python -c 'import xspec; print(xspec)'
 
