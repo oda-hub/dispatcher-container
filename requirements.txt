@@ -32,6 +32,6 @@ simplejson
 simple_logger
 six
 werkzeug
-pandas
+pandas < 2.3
 pylogstash_context>=0.1.19
 h5py>=3.5.0
